@@ -1,0 +1,30 @@
+bin/
+obj/
+*.user
+*.suo
+*.log
+packages/
+*.vscode/
+"
+
+# Создание структуры проекта
+mkdir src
+mkdir docs
+
+# Создание основного файла для Visual Studio
+Set-Content -Path src\Program.cs -Value @"
+using System;
+using System.Windows;
+
+namespace MiningApp
+{
+    class Program
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
+            Application app = new Application();
+            app.Run(new MainWindow());
+        }
+    }
+}
